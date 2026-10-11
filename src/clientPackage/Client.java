@@ -1,9 +1,7 @@
 package clientPackage;
-
 import java.io.*;
 import java.net.Socket;
-
-
+import java.util.Scanner;
 public class Client   {
     static void main(String[] args) throws IOException {
         System.out.println("Je ne suis pas encore connecté");
@@ -11,7 +9,23 @@ public class Client   {
         Socket socket = new Socket("localhost", 1234);
         System.out.println("Je suis un client connecté");
 
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Entrer un entier x : ");
+        int x = scanner.nextInt();
 
+        OutputStream os = socket.getOutputStream();
+        DataOutputStream dos = new DataOutputStream(os);
+        dos.writeInt(x);
+        System.out.println("Nombre envoyeé au serveur : "+x);
+
+        InputStream is = socket.getInputStream();
+        DataInputStream dis = new DataInputStream(is);
+        int xx = dis.readInt();
+        System.out.println("Resultat recu de de serveur : "+xx);
+
+        dis.close();
+        dos.close();
         socket.close();
+        scanner.close();
     }
 }

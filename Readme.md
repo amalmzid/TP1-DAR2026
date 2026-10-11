@@ -50,4 +50,54 @@ Ce projet implémente une application client-serveur en utilisant des sockets en
 
 **Interprétation** : Le client se connecte en utilisant l'adresse IP du serveur au lieu de localhost.
 
+---
+
+# TP1 - Activité 2 - Applications Réparties
+
+## Description
+Cette activité étend l'application client-serveur en ajoutant un traitement des nombres envoyés par le client : le serveur multiplie la valeur envoyée par 5.
+
+## Execution
+
+### Code du serveur
+![Code serveur](screenshots/tp1-activite2-server-code-part.png)
+
+**Interprétation** : Le serveur reçoit un nombre du client, le multiplie par 5 et renvoie le résultat.
+
+### Lancement du serveur
+![Lancement serveur](screenshots/tp1-activite2-launch-server-wait-for-client-part.png)
+
+**Interprétation** : Le serveur se lance et attend la connexion d'un client sur le port 1234.
+
+### Code du client
+![Code client](screenshots/tp1-activite2-client-code-part.png)
+
+**Interprétation** : Le client se connecte au serveur et permet à l'utilisateur d'entrer un nombre.
+
+### Lancement du client
+![Lancement client](screenshots/tp1-activite2-launch-client-connected-part.png)
+
+**Interprétation** : Le client se connecte avec succès au serveur et attend l'entrée d'un nombre.
+
+
+### Client envoie 0
+![Client envoie 0](screenshots/tp1-activite2-client-gives-nb-0-and-sever-replies-part.png)
+
+**Interprétation** : Le client envoie 0, le serveur le multiplie par 5 (0 × 5 = 0) et renvoie le résultat.
+
+### Client envoie un nombre négatif
+![Client envoie négatif](screenshots/tp1-activite2-client-gives-negative-nb-and-sever-replies-part.png)
+
+**Interprétation** : Le client envoie un nombre négatif, le serveur le multiplie par 5 et renvoie le résultat (exemple : -3 × 5 = -15).
+
+### Client envoie un nombre (ex: 5)
+![Client envoie nombre](screenshots/tp1-activite2-client-gives-nb-and-sever-replies-part.png)
+
+**Interprétation** : Le client envoie le nombre 5 au serveur, qui le multiplie par 5 (5 × 5 = 25) et renvoie le résultat.
+
+### Serveur après réponse
+![Serveur après réponse](screenshots/tp1-activite2-server-after-replies-to-client.png)
+
+**Interprétation** : Le serveur affiche le nombre reçu et le résultat de la multiplication par 5, puis continue d'attendre d'autres clients.
+
 
