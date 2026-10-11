@@ -98,6 +98,30 @@ Cette activité étend l'application client-serveur en ajoutant un traitement de
 ### Serveur après réponse
 ![Serveur après réponse](screenshots/tp1-activite2-server-after-replies-to-client.png)
 
-**Interprétation** : Le serveur affiche le nombre reçu et le résultat de la multiplication par 5, puis continue d'attendre d'autres clients.
+**Interprétation** : Le serveur affiche le nombre reçu et le résultat de la multiplication.
+
+---
+
+## multiplication avec plusieurs entiers
+
+### Code du serveur modifié
+![Code serveur modifié](screenshots/tp1-acticite2-server-code-multiplication-multiple.png)
+
+**Interprétation** : Le serveur utilise une boucle pour traiter plusieurs nombres consécutifs envoyés par le client. Il continue à multiplier chaque nombre par 5 tant que le client envoie des données.
+
+### Lancement du serveur
+![Lancement serveur](screenshots/tp1-acticite2-launch-server-code-multiplication-multiple.png)
+
+**Interprétation** : Le serveur se lance et attend la connexion d'un client. Il est prêt à traiter plusieurs nombres consécutifs.
+
+### Code du client modifié
+![Code client modifié](screenshots/tp1-acticite2-client-code-multiplication-multiple.png)
+
+**Interprétation** : Le client utilise une boucle pour permettre à l'utilisateur de saisir plusieurs entiers successivement. La boucle se termine lorsque l'utilisateur saisit 0.
+
+### Lancement du client avec multiplications multiples
+![Lancement client](screenshots/tp1-acticite2-launch-client-code-multiplication-multiple.png)
+
+**Interprétation** : Le client se connecte au serveur et permet à l'utilisateur de saisir plusieurs nombres. Chaque nombre est envoyé au serveur, multiplié par 5, et le résultat est affiché. Le processus se termine automatiquement lorsque l'utilisateur saisit 0, fermant proprement la connexion.
 
 
