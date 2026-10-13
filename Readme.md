@@ -189,3 +189,38 @@ Cette activité consiste à installer et exécuter le Client et le Serveur sur d
 
 **Interprétation** : Le client est compilé et exécuté sur la machine hôte. Il se connecte au serveur sur la VM via l'adresse IP 192.168.0.122 et peut envoyer des nombres pour multiplication.
 
+---
+
+## Description (Partie 2)
+Cette partie améliore le service de calculatrice pour offrir au client quatre opérations de calcul possibles : Addition, Soustraction, Multiplication, et Division.
+## Code du Serveur (Partie 2)
+
+### Code du serveur avec menu de calculatrice
+![Code serveur partie 2](screenshots/tp1-activite3-server-code-partie2.png)
+
+**Interprétation** : Le serveur reçoit l'opération choisie (1-4) et le nombre x du client. Il effectue le calcul selon l'opération (Addition: x+5, Soustraction: x-5, Multiplication: x*5, Division: x/5) et renvoie le résultat.
+
+## Code du Client (Partie 2)
+
+### Code du client avec menu de calculatrice
+![Code client partie 2](screenshots/tp1-activite3-client-code-partie2.png)
+
+**Interprétation** : Le client affiche un menu avec 4 opérations possibles. L'utilisateur choisit l'opération et entre un nombre x. Le client envoie l'opération et le nombre au serveur, puis affiche le résultat reçu.
+
+## Exécution (Partie 2)
+
+### Lancement du serveur
+![Serveur en exécution](screenshots/tp1-activite3-run-server.png)
+
+**Interprétation** : Le serveur est lancé et attend les connexions des clients. Il est prêt à traiter les demandes de calcul avec le menu de calculatrice.
+
+### Lancement du client
+![Client test 1](screenshots/tp1-activite3-run-client1.png)
+
+![Client test 2](screenshots/tp1-activite3-run-client2.png)
+
+**Interprétation** : Le client teste l'application avec différentes opérations.
+
+
+
+
