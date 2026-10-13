@@ -125,3 +125,67 @@ Cette activité étend l'application client-serveur en ajoutant un traitement de
 **Interprétation** : Le client se connecte au serveur et permet à l'utilisateur de saisir plusieurs nombres. Chaque nombre est envoyé au serveur, multiplié par 5, et le résultat est affiché. Le processus se termine automatiquement lorsque l'utilisateur saisit 0, fermant proprement la connexion.
 
 
+---
+
+# TP1 - Activité 3 - Applications Réparties sur Machines Distinctes
+
+## Description (Partie 1)
+Cette activité consiste à installer et exécuter le Client et le Serveur sur deux machines distinctes du même réseau local.
+## Configuration de la VM
+
+### Lancement de la VM
+![Lancement VM](screenshots/tp1-activite3-launch-vm.png)
+
+**Interprétation** : La machine virtuelle est lancée et prête à être configurée.
+
+### Changement du mode réseau en Bridge
+![Mode réseau Bridge](screenshots/tp1-activite3-change-vm-network-mode-to-bridge.png)
+
+**Interprétation** : Le mode réseau de la VM est configuré en mode Bridge pour permettre la communication directe avec le réseau local.
+
+### Récupération de l'adresse IP de la VM et ping vers la machine hôte
+![IP VM et ping](screenshots/tp1-activite3-get-vm-ipaddress-and-ping-host-machine.png)
+
+**Interprétation** : L'adresse IP de la VM est récupérée (192.168.0.122) et la connectivité avec la machine hôte est vérifiée par ping.
+
+### Récupération de l'adresse IP de la machine hôte et ping vers la VM
+![IP hôte et ping](screenshots/tp1-activite3-get-host-machine-ipaddress-and-ping-vm.png)
+
+**Interprétation** : L'adresse IP de la machine hôte est récupérée et la connectivité avec la VM est vérifiée par ping.
+
+### Configuration du pare-feu - Autorisation du port 1234
+![Configuration pare-feu](screenshots/tp1-activite3-allow-port-1234-and-enable-ufw.png)
+
+**Interprétation** : Le pare-feu UFW est activé et le port 1234 est autorisé pour permettre les connexions entrantes sur le serveur.
+
+## Code du Serveur
+
+### Code du serveur avec InetAddress
+![Code serveur](screenshots/tp1-activite3-server-code-with-innetaddress.png)
+
+**Interprétation** : Le serveur utilise `InetAddress.getByName("192.168.0.122")` pour définir l'adresse IP et `InetSocketAddress` pour combiner l'IP et le port. Le ServerSocket est bindé à cette adresse spécifique.
+
+## Code du Client
+
+### Code du client avec InetAddress
+![Code client](screenshots/tp1-activite3-client-code-with-inetaddress.png)
+
+**Interprétation** : Le client utilise `InetAddress.getByName("192.168.0.122")` pour se connecter au serveur sur la VM au lieu de localhost.
+
+## Exécution
+
+### Copie du serveur vers la VM via SCP
+![SCP copie](screenshots/tp1-activite3-scp-packageServer-to-vm.png)
+
+**Interprétation** : Le fichier Server_1_3.java est copié de la machine hôte vers la VM en utilisant la commande SCP.
+
+### Compilation et exécution du serveur sur la VM
+![Serveur sur VM](screenshots/tp1-activite3-compile-and-run-server-on-vm.png)
+
+**Interprétation** : Le serveur est compilé et exécuté sur la VM. Il écoute sur l'adresse IP 192.168.0.122 et le port 1234, attendant les connexions des clients.
+
+### Compilation et exécution du client sur la machine hôte
+![Client sur PC](screenshots/tp1-activite3-compile-and-run-client-on-pc.png)
+
+**Interprétation** : Le client est compilé et exécuté sur la machine hôte. Il se connecte au serveur sur la VM via l'adresse IP 192.168.0.122 et peut envoyer des nombres pour multiplication.
+

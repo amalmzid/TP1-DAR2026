@@ -1,12 +1,17 @@
 package clientPackage;
 import java.io.*;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.Scanner;
-public class Client   {
-    static void main(String[] args) throws IOException {
+public class Client_1_3   {
+    public static void main(String[] args) throws IOException {
         System.out.println("Je ne suis pas encore connecté");
-        Socket socket = new Socket("localhost", 1234);
-        System.out.println("Je suis un client connecté");
+        InetAddress adresseIP = InetAddress.getByName("192.168.0.122");
+        InetSocketAddress socketAddress = new InetSocketAddress(adresseIP, 1234);
+        Socket socket = new Socket();
+        socket.connect(socketAddress);
+        System.out.println("Je suis un client connecté à l'adresse IP: " + adresseIP.getHostAddress());
         Scanner scanner = new Scanner(System.in);
         OutputStream os = socket.getOutputStream();
         DataOutputStream dos = new DataOutputStream(os);
